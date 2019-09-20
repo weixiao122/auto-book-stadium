@@ -17,10 +17,13 @@ import send_email
 class BookStadium():
 
     def __init__(self):
-        profile_directory = r'--user-data-dir=C:\Users\thinkpad\AppData\Local\Google\Chrome\User Data'
+        #profile_directory = r'--user-data-dir=C:\Users\thinkpad\AppData\Local\Google\Chrome\User Data'
+        profile_directory = r'--user-data-dir=C:\Users\luoyuanhong\AppData\Local\Google\Chrome\User Data'
         option = webdriver.ChromeOptions()
         option.add_argument(profile_directory)
-        self.driver = webdriver.Chrome(chrome_options=option)
+        #self.driver = webdriver.Chrome(chrome_options=option)
+        #新版selenium已经使用options替代chrome_options
+        self.driver = webdriver.Chrome(options=option)
         self.driver.implicitly_wait(10)
 
     def search(self, city_id, search_text):
